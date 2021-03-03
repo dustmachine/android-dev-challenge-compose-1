@@ -53,6 +53,7 @@ typealias OnPetItemClicked = (Pet) -> Unit
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             PetList(
                 pets = listOf(
