@@ -20,7 +20,11 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -42,13 +46,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var pets = { "onepet" }
             PetList(
                 pets = listOf(
+                    Pet("Gary", "a special doggo", R.drawable.gary),
                     Pet("Russell", "a super doggo", R.drawable.russell),
-                    Pet("Steve", "a silly doggo", R.drawable.steve),
                     Pet("Spike", "an energetic doggo", R.drawable.spike),
+                    Pet("Steve", "a silly doggo", R.drawable.steve),
                     Pet("Buddy", "a nice doggo", R.drawable.buddy),
+                    Pet("Bingo", "a smart doggo", R.drawable.bingo),
                     Pet("Morris", "a sweet doggo", R.drawable.morris)
                 )
             )
@@ -69,7 +74,6 @@ fun PetList(pets: List<Pet>, modifier: Modifier = Modifier) {
 // Start building your app here!
 @Composable
 fun PetCard(
-    modifier: Modifier = Modifier,
     pet: Pet
 ) {
     Surface(color = MaterialTheme.colors.background) {
@@ -103,20 +107,22 @@ fun LightPreview() {
     MyTheme {
         PetList(
             pets = listOf(
+                Pet("Gary", "a special doggo", R.drawable.gary),
                 Pet("Russell", "a super doggo", R.drawable.russell),
-                Pet("Steve", "a silly doggo", R.drawable.steve),
                 Pet("Spike", "an energetic doggo", R.drawable.spike),
+                Pet("Steve", "a silly doggo", R.drawable.steve),
                 Pet("Buddy", "a nice doggo", R.drawable.buddy),
+                Pet("Bingo", "a smart doggo", R.drawable.bingo),
                 Pet("Morris", "a sweet doggo", R.drawable.morris)
             )
         )
     }
 }
 //
-//@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-//@Composable
-//fun DarkPreview() {
+// @Preview("Dark Theme", widthDp = 360, heightDp = 640)
+// @Composable
+// fun DarkPreview() {
 //    MyTheme(darkTheme = true) {
 //        NewsStory()
 //    }
-//}
+// }
