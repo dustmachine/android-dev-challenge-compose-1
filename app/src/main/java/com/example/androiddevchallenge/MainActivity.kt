@@ -99,7 +99,7 @@ fun PetCard(
                 .clickable(
                     onClick = {
                         onPetClicked(pet)
-                        isSelected = !isSelected
+                        isSelected = isSelected
                     }
                 )
         ) {
